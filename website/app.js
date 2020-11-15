@@ -4,6 +4,9 @@ const apiKey = "&APPID=908e82f11abd0ba527466cb4d4e77de3&units=metric";
 let temp = document.querySelector('#temp');
 let content = document.querySelector('#content');
 let date = document.querySelector('#date');
+let name = document.querySelector('#name');
+let pressure = document.querySelector('#pressure');
+let humidity = document.querySelector('#humidity');
 
 // Create a new date instance dynamically with JS
 let d = new Date();
@@ -50,6 +53,9 @@ const updateHTML = async () => {
   const projectData = await getData('/all');
   console.log(`${projectData}`);
   date.innerHTML = `${projectData.date}`;
+  name.innerHTML = `${projectData.name}`;
   temp.innerHTML = `${projectData.temp}`;
+  pressure.innerHTML = `${projectData.pressure}`;
+  humidity.innerHTML = `${projectData.humidity}`;
   content.innerHTML = projectData.content;
 };

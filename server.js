@@ -47,7 +47,10 @@ function addWeather(req, res) {
 	let data = req.body;
 	console.log('Data from server side', data);
 	projectData.date = data.date;
-	projectData.temp = data.temp;
+	projectData.name = data.name;
+	projectData.temp = data.main.temp;
 	projectData.content = data.content;
+	projectData.pressure = data.main.pressure;
+	projectData.humidity = data.main.humidity;
 	res.send(projectData);
 }
